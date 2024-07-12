@@ -1,5 +1,5 @@
 <?php
 //------------------------------::::::::::::::::::::------------------------------\\
-// Dibuat oleh FA Team di PT. Pacifica Raya Technology \\
+// Dibuat oleh Novita Anggraini\\
 //------------------------------::::::::::::::::::::------------------------------\\
 header("location: dashboard");

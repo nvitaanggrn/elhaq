@@ -1,6 +1,6 @@
 <?php
 //------------------------------::::::::::::::::::::------------------------------\\
-// Dibuat oleh FA Team di PT. Pacifica Raya Technology \\
+// Dibuat oleh novi \\
 //------------------------------::::::::::::::::::::------------------------------\\
 session_start();
 if ($_SESSION['level'] != "Anggota") {

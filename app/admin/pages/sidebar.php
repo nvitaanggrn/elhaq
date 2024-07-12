@@ -7,7 +7,9 @@
                 <img src="../../assets/dist/img/avatar5.png" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
-                <p><?= $_SESSION['fullname']; ?></p>
+                <p>
+                    <?= $_SESSION['fullname']; ?>
+                </p>
                 <?php
                 include "../../config/koneksi.php";
 
@@ -41,10 +43,15 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="anggota"><i class="fa fa-circle-o"></i> Data Anggota</a></li>
-                    <li><a href="penerbit"><i class="fa fa-circle-o"></i> Data Penerbit</a></li>
                     <li><a href="administrator"><i class="fa fa-circle-o"></i> Administrator</a></li>
+                    <li><a href="anggota"><i class="fa fa-circle-o"></i> Data Anggota</a></li>
                     <li><a href="data-peminjaman"><i class="fa fa-circle-o"></i> Data Peminjaman</a></li>
+                    <li><a href="pengembalian-buku"><i class="fa fa-circle-o"></i> Data Pengembalian</a></li>
+
+                    <!-- <li><a href="anggota"><i class="fa fa-circle-o"></i> Administrator</a></li>
+                    <li><a href="penerbit"><i class="fa fa-circle-o"></i> Data Anggota</a></li>
+                    <li><a href="administrator"><i class="fa fa-circle-o"></i> Data Penerbit</a></li>
+                    <li><a href="data-peminjaman"><i class="fa fa-circle-o"></i> Data Peminjaman</a></li> -->
                 </ul>
             </li>
             <li class="treeview">
@@ -56,8 +63,10 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
+                    <li><a href="kategori-buku"><i class="fa fa-circle-o"></i>Kategori Buku</a></li>
+                    <li><a href="penerbit"><i class="fa fa-circle-o"></i> Data Penerbit</a></li>
                     <li><a href="data-buku"><i class="fa fa-circle-o"></i> Data Buku</a></li>
-                    <li><a href="kategori-buku"><i class="fa fa-circle-o"></i> Kategori Buku</a></li>
+
                 </ul>
             </li>
             <li><a href="laporan"><i class="fa fa-book"></i> <span>Laporan Perpustakaan</span></a></li>
@@ -70,12 +79,12 @@
 
                         $nama_saya = $_SESSION['fullname'];
                         $default = "Belum dibaca";
-                        $query_pesan  = mysqli_query($koneksi, "SELECT * FROM pesan WHERE penerima = '$nama_saya' AND status = '$default'");
+                        $query_pesan = mysqli_query($koneksi, "SELECT * FROM pesan WHERE penerima = '$nama_saya' AND status = '$default'");
                         $jumlah_pesan = mysqli_num_rows($query_pesan);
 
                         $nama_saya = $_SESSION['fullname'];
                         $default = "Belum dibaca";
-                        $query_pesan  = mysqli_query($koneksi, "SELECT * FROM pesan WHERE penerima = '$nama_saya' AND status = '$default'");
+                        $query_pesan = mysqli_query($koneksi, "SELECT * FROM pesan WHERE penerima = '$nama_saya' AND status = '$default'");
                         $row_pesan = mysqli_fetch_array($query_pesan);
 
                         if ($jumlah_pesan == null) {
@@ -87,7 +96,8 @@
                     </span>
                 </a></li>
             <li class="header">LANJUTAN</li>
-            <li><a href="#Logout" data-toggle="modal" data-target="#modalLogoutConfirm"><i class="fa fa-sign-out"></i> <span>Keluar</span></a></li>
+            <li><a href="#Logout" data-toggle="modal" data-target="#modalLogoutConfirm"><i class="fa fa-sign-out"></i>
+                    <span>Keluar</span></a></li>
         </ul>
     </section>
     <!-- /.sidebar -->
@@ -113,7 +123,7 @@
     </div>
 </div>
 <script>
-    var refreshId = setInterval(function() {
+    var refreshId = setInterval(function () {
         $('#jumlahPesan').load('./pages/function/Pesan.php?aksi=jumlahPesan');
     }, 500);
 </script>

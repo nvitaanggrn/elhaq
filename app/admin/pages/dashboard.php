@@ -29,7 +29,7 @@
     <!-- Main content -->
     <section class="content">
         <div class="alert alert-secondary" style="color: #383d41; background-color: #e2e3e5; border-color: #d6d8db;">
-            Selamat Datang, <?= $_SESSION['fullname']; ?> di Administrator Perpustakaan LTE CS.
+            Selamat Datang, <?= $_SESSION['fullname']; ?> di Administrator Siphaq.
         </div>
         <!-- Small boxes (Stat box) -->
         <div class="row">

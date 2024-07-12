@@ -1,7 +1,7 @@
 <?php
 session_start();
 //------------------------------::::::::::::::::::::------------------------------\\
-// Dibuat oleh FA Team di PT. Pacifica Raya Technology \\
+// Dibuat oleh novi \\
 //------------------------------::::::::::::::::::::------------------------------\\
 include "../../../../config/koneksi.php";
 include "Peminjaman.php";

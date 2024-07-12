@@ -2,6 +2,13 @@
 session_start();
 include "../../../../config/koneksi.php";
 
+// Mendapatkan kata kunci pencarian dari parameter GET
+$keyword = isset($_GET['keyword']) ? $_GET['keyword'] : '';
+
+// Menambahkan kata kunci pencarian ke dalam query SQL
+$query = "SELECT * FROM penerbit WHERE nama_penerbit LIKE '%$keyword%'";
+
+
 if ($_GET['act'] == "tambah") {
     $kode_penerbit = $_POST['kodePenerbit'];
     $nama_penerbit = $_POST['namaPenerbit'];
@@ -18,6 +25,7 @@ if ($_GET['act'] == "tambah") {
         $_SESSION['gagal'] = "Penerbit gagal ditambahkan !";
         header("location: " . $_SERVER['HTTP_REFERER']);
     }
+
 } elseif ($_GET['act'] == "edit") {
     $id_penerbit = $_POST['idPenerbit'];
     $nama_penerbit = $_POST['namaPenerbit'];

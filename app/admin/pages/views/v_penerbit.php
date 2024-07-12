@@ -32,11 +32,14 @@
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-header">
-                        <h3 class="box-title" style="font-family: 'Quicksand', sans-serif; font-weight: bold;">Data Penerbit</h3>
+                        <h3 class="box-title" style="font-family: 'Quicksand', sans-serif; font-weight: bold;">Data
+                            Penerbit</h3>
                         <div class="form-group m-b-2 text-right" style="margin-top: -20px; margin-bottom: -5px;">
-                            <button type="button" onclick="tambahPenerbit()" class="btn btn-info"><i class="fa fa-plus"></i> Tambah Penerbit</button>
+                            <button type="button" onclick="tambahPenerbit()" class="btn btn-info"><i
+                                    class="fa fa-plus"></i> Tambah Penerbit</button>
                         </div>
                     </div>
+
                     <!-- /.box-header -->
                     <div class="box-body table-responsive">
                         <table id="example1" class="table table-bordered table-striped">
@@ -55,12 +58,18 @@
                             $no = 1;
                             $query = mysqli_query($koneksi, "SELECT * FROM penerbit");
                             while ($row = mysqli_fetch_assoc($query)) {
-                            ?>
+                                ?>
                                 <tbody>
                                     <tr>
-                                        <td><?= $no++; ?></td>
-                                        <td><?= $row['kode_penerbit']; ?></td>
-                                        <td><?= $row['nama_penerbit']; ?></td>
+                                        <td>
+                                            <?= $no++; ?>
+                                        </td>
+                                        <td>
+                                            <?= $row['kode_penerbit']; ?>
+                                        </td>
+                                        <td>
+                                            <?= $row['nama_penerbit']; ?>
+                                        </td>
                                         <td>
                                             <?php
 
@@ -74,8 +83,11 @@
                                             ?>
                                         </td>
                                         <td>
-                                            <a href="#" data-toggle="modal" data-target="#modalEditPenerbit<?= $row['id_penerbit']; ?>" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
-                                            <a href="pages/function/Penerbit.php?act=hapus&id=<?= $row['id_penerbit']; ?>" class="btn btn-danger btn-sm btn-del"><i class="fa fa-trash"></i></a>
+                                            <a href="#" data-toggle="modal"
+                                                data-target="#modalEditPenerbit<?= $row['id_penerbit']; ?>"
+                                                class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
+                                            <a href="pages/function/Penerbit.php?act=hapus&id=<?= $row['id_penerbit']; ?>"
+                                                class="btn btn-danger btn-sm btn-del"><i class="fa fa-trash"></i></a>
                                         </td>
                                     </tr>
                                     <!-- Modal Edit Anggota -->
@@ -83,22 +95,32 @@
                                         <div class="modal-dialog">
                                             <div class="modal-content" style="border-radius: 5px;">
                                                 <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
                                                         <span aria-hidden="true">&times;</span></button>
-                                                    <h4 class="modal-title" style="font-family: 'Quicksand', sans-serif; font-weight: bold;">
-                                                        Edit Penerbit ( <?= $row['kode_penerbit']; ?> - <?= $row['nama_penerbit']; ?> )
+                                                    <h4 class="modal-title"
+                                                        style="font-family: 'Quicksand', sans-serif; font-weight: bold;">
+                                                        Edit Penerbit (
+                                                        <?= $row['kode_penerbit']; ?> -
+                                                        <?= $row['nama_penerbit']; ?> )
                                                     </h4>
                                                 </div>
-                                                <form action="pages/function/Penerbit.php?act=edit" enctype="multipart/form-data" method="POST">
+                                                <form action="pages/function/Penerbit.php?act=edit"
+                                                    enctype="multipart/form-data" method="POST">
                                                     <div class="modal-body">
-                                                        <input type="hidden" value="<?= $row['id_penerbit']; ?>" name="idPenerbit">
+                                                        <input type="hidden" value="<?= $row['id_penerbit']; ?>"
+                                                            name="idPenerbit">
                                                         <div class="form-group">
                                                             <label>Kode Penerbit</label>
-                                                            <input type="text" class="form-control" value="<?= $row['kode_penerbit'] ?>" style="cursor: not-allowed;" name="kodeAnggota" readonly>
+                                                            <input type="text" class="form-control"
+                                                                value="<?= $row['kode_penerbit'] ?>"
+                                                                style="cursor: not-allowed;" name="kodeAnggota" readonly>
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Nama Penerbit</label>
-                                                            <input type="text" class="form-control" value="<?= $row['nama_penerbit']; ?>" name="namaPenerbit" required>
+                                                            <input type="text" class="form-control"
+                                                                value="<?= $row['nama_penerbit']; ?>" name="namaPenerbit"
+                                                                required>
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Status</label>
@@ -120,7 +142,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="submit" class="btn btn-primary btn-block">Simpan</button>
+                                                        <button type="submit"
+                                                            class="btn btn-primary btn-block">Simpan</button>
                                                     </div>
                                                 </form>
                                             </div>
@@ -129,7 +152,7 @@
                                         <!-- /.modal-dialog -->
                                     </div>
                                 </tbody>
-                            <?php
+                                <?php
                             }
                             ?>
                         </table>
@@ -151,7 +174,8 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" style="font-family: 'Quicksand', sans-serif; font-weight: bold;">Tambah Penerbit</h4>
+                <h4 class="modal-title" style="font-family: 'Quicksand', sans-serif; font-weight: bold;">Tambah Penerbit
+                </h4>
             </div>
             <form action="pages/function/Penerbit.php?act=tambah" enctype="multipart/form-data" method="POST">
                 <div class="modal-body">
@@ -178,11 +202,13 @@
                         $huruf = "P";
                         $Kode = $huruf . sprintf("%03s", $urutan);
                         ?>
-                        <input type="text" class="form-control" value="<?php echo $Kode ?>" name="kodePenerbit" readonly>
+                        <input type="text" class="form-control" value="<?php echo $Kode ?>" name="kodePenerbit"
+                            readonly>
                     </div>
                     <div class="form-group">
                         <label>Nama Penerbit <small style="color: red;">* Wajib diisi</small></label>
-                        <input type="text" class="form-control" placeholder="Masukan Nama Penerbit" name="namaPenerbit" required>
+                        <input type="text" class="form-control" placeholder="Masukan Nama Penerbit" name="namaPenerbit"
+                            required>
                     </div>
                     <div class="form-group">
                         <label>Status <small style="color: red;">* Wajib diisi</small></label>
@@ -241,18 +267,18 @@
 </script>
 <!-- Swal Hapus Data -->
 <script>
-    $('.btn-del').on('click', function(e) {
+    $('.btn-del').on('click', function (e) {
         e.preventDefault();
         const href = $(this).attr('href')
 
         swal({
-                icon: 'warning',
-                title: 'Peringatan',
-                text: 'Apakah anda yakin ingin menghapus data penerbit ini ?',
-                buttons: true,
-                dangerMode: true,
-                buttons: ['Tidak, Batalkan !', 'Iya, Hapus']
-            })
+            icon: 'warning',
+            title: 'Peringatan',
+            text: 'Apakah anda yakin ingin menghapus data penerbit ini ?',
+            buttons: true,
+            dangerMode: true,
+            buttons: ['Tidak, Batalkan !', 'Iya, Hapus']
+        })
             .then((willDelete) => {
                 if (willDelete) {
                     document.location.href = href;

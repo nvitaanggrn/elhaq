@@ -1,8 +1,5 @@
 <?php
 session_start();
-//------------------------------::::::::::::::::::::------------------------------\\
-// Dibuat oleh FA Team di PT. Pacifica Raya Technology \\
-//------------------------------::::::::::::::::::::------------------------------\\
 ?>
 <!DOCTYPE html>
 <html>
@@ -77,7 +74,7 @@ session_start();
                 </div>
             </div>
 
-            <p style="text-align: center; font-size: 13px;">Hak Cipta &copy; <?= date('Y'); ?> .<?= $row1['nama_app']; ?> by FA Team.</p>
+            <p style="text-align: center; font-size: 13px;">Hak Cipta &copy; <?= date('Y'); ?> .<?= $row1['nama_app']; ?> by Siphaq & Novi </p> 
 
         </div>
         <!-- /.login-box-body -->
